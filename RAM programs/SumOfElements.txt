@@ -38,4 +38,4 @@ end
 
 //Complexity analysis
 Counting lines of instructions and using the uniform cost criterion, we have:
-T(n) = 8 +
+T(n) = 8 + 13n = O(n)
