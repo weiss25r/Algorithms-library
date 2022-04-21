@@ -1,0 +1,41 @@
+-- Text --
+
+Let A be an array of N integers, already stored in memory. Write a RAM programs that computes the sum: A[0]+A[1]+...+A[n-1]
+
+-- Pseudocode --
+begin
+
+c = 0
+for i = 0 to n-1 do:
+    c = c + A[i]
+
+print c
+
+end
+
+-- RAM program --
+
+1.  LOAD = 0 //c = 0
+2.  STORE <c> //where c is the location of memory that will contain c
+3.  LOAD = 0; //i = 0
+4.  STORE <i> //where i is the location of memory that will contain i
+5.  LOAD <n> //where n is the location of memory where n resides
+6.  SUB <i> //accumulator = n - i
+7.  JZERO <18> //if i = n then break the cycle
+
+8.  LOAD <base> //where base is the address of the first element of A
+9.  ADD <i> //now the accumulator contains the address of A[i]
+10. STORE <pointer> //pointer is the location of memory that will contain the address of the address of A[i]
+11. LOAD *pointer //indirect addressing is necessary, because of the latter.
+12. ADD <c> // c = c + A[i]
+13. STORE <c>
+14. LOAD = 1 
+15. ADD <i> //i = i + 1
+16. STORE <i>
+17. JUMP<5> //loop
+
+18. HALT
+
+//Complexity analysis
+Counting lines of instructions and using the uniform cost criterion, we have:
+T(n) = 8 +
