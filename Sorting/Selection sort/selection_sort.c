@@ -2,13 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-//selection sorts an array of n elements
 void swap(int *a, int *b) {
-    int *tmp = *a;
+    int tmp = *a;
     *a = *b;
     *b = tmp;
 }
 
+//selection sorts an array of n elements
 void selectionSort(int *array, int n) {
     for(int i = 0; i < n; i++) {
         int min = i;
