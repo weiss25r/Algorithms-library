@@ -53,13 +53,12 @@ int isSorted(int *array, int dim) {
 
 int main(void) {
     srand(time(NULL));
+
     int *array = (int *)malloc(N * sizeof(int));
 
     for (size_t i = 0; i < N; i++)
-    {
         array[i] = rand()%N + 1;
-    }
-
+        
     /*
     puts("Unsorted array: ");
     printArray(array, N);
