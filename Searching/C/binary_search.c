@@ -16,7 +16,8 @@ int main(void)
     char letters[MAXDIM] = {'a', 'b', 'c', 'd', 'e'};
     char element = 'k';
 
-    printf("%d\n", binarySearchRecursive(letters, 0, MAXDIM-1, sizeof(char), &element, compareChars));
+    printf("%d\n", binarySearchRecursive(
+        letters, 0, MAXDIM-1, sizeof(char), &element, compareChars));
     element = 'e';
     printf("%d\n", binarySearchIterative(letters, MAXDIM, sizeof(char), &element, compareChars));
 }
